@@ -6,13 +6,13 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAhtEAqKD7QqvOQ-IfnOFZcoe5AMjBBuT4",
-  authDomain: "daily-activity-planner-68956.firebaseapp.com",
-  projectId: "daily-activity-planner-68956",
-  storageBucket: "daily-activity-planner-68956.firebasestorage.app",
-  messagingSenderId: "710641808732",
-  appId: "1:710641808732:web:85feb0f6f3735ed3adbd99",
-  measurementId: "G-XDQR9JV005"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
