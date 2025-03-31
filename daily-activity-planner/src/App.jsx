@@ -6,6 +6,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup"; 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import CalendarView from "./components/CalendarView";
+import TasksPage from "./pages/TasksPage"; 
+import ProgressPage from "./pages/ProgressPage"; 
 import './index.css';
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
                         <Route path="/signup" element={<Signup />} />  
                         <Route path="/dashboard" element={<Dashboard />} /> 
                         <Route path="/calendar" element={<CalendarView />} />
+                        <Route path="/tasks" element={<TasksPage />} />
+                        <Route path="/progress" element={<ProgressPage />} /> 
                     </Routes>
               
             </main>
