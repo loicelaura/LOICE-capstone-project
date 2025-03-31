@@ -1,54 +1,37 @@
-import { useState, useEffect } from 'react'; // Import useEffect
-import './App.css';
+import React from "react";
+import TopBar from "./components/TopBar";
+import CallToAction from "./components/CallToAction";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";  
+import Signup from "./components/Signup"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import CalendarView from "./components/CalendarView";
 import './index.css';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
-import { auth } from './firebase'; // Import auth
 
 function App() {
-  const [user, setUser] = useState(null);
+    return (
+        <div className="min-h-screen flex flex-col">
+            {/* Navigation Bar */}
+            <TopBar />
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
-    });
-    return () => unsubscribe();
-  }, []);
+            {/* main section */}
+            <main className="flex flex-col items-center justify-center flex-1">
+            <Routes>
+                        <Route path="/" element={<CallToAction />} />
+                        <Route path="/login" element={<Login />} />  
+                        <Route path="/signup" element={<Signup />} />  
+                        <Route path="/dashboard" element={<Dashboard />} /> 
+                        <Route path="/calendar" element={<CalendarView />} />
+                    </Routes>
+              
+            </main>
 
-  return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      {user ? (
-        <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
-          <p className="text-center text-lg font-semibold mb-4">
-            Logged in as: {user.email}
-          </p>
-          <div className="flex justify-center mb-6">
-            <button
-              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-              onClick={() => auth.signOut()}
-            >
-              Logout
-            </button>
-          </div>
-          <div className="flex justify-center">
-            <TaskForm />
-          </div>
-          <div className="mt-8">
-            <TaskList />
-          </div>
+            {/* Dashboard Section */}
+            <section className="flex flex-col items-center justify-center flex-1">
+                <Dashboard />
+            </section>
         </div>
-      ) : (
-        <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-md space-y-4">
-          <div className="flex justify-center space-x-4">
-            <LoginForm />
-            <SignupForm />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    );
 }
 
 export default App;
