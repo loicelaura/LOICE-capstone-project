@@ -1,4 +1,4 @@
-import { db } from "./firebase"; // Import Firebase setup
+import { db } from "./firebase"; 
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "firebase/firestore";
 
 const tasksCollection = collection(db, "tasks");

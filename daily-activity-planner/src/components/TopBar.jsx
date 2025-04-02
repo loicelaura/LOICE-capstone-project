@@ -17,6 +17,7 @@ const TopBar = () => {
 
             {/* Login & Sign Up */}
             <div className="space-x-4">
+                <Link to="/home" className="hover:underline">Home</Link>
                 <Link to="/login" className="text-blue-500 font-medium">Login</Link>
                 <Link to="/signup" className="bg-blue-500 text-white px-4 py-2 rounded">Sign Up</Link>
             </div>

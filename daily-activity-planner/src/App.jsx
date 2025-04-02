@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import TopBar from "./components/TopBar";
 import CallToAction from "./components/CallToAction";
 import Dashboard from "./components/Dashboard";
@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CalendarView from "./components/CalendarView";
 import TasksPage from "./pages/TasksPage"; 
 import ProgressPage from "./pages/ProgressPage"; 
+import GoalsPage from "./components/GoalsPage";
+import NotesPage from "./components/NotesPage";
+import JournalPage from "./components/JournalPage";
 import './index.css';
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
                         <Route path="/calendar" element={<CalendarView />} />
                         <Route path="/tasks" element={<TasksPage />} />
                         <Route path="/progress" element={<ProgressPage />} /> 
+                        <Route path="/goals" element={<GoalsPage />} />
+                        <Route path="/journal" element={<JournalPage/>} />
+                        <Route path="/notes" element={<NotesPage/>} />
                     </Routes>
               
             </main>

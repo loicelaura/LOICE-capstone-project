@@ -1,29 +1,10 @@
-import React, { useState } from "react";
-import { Calendar, momentLocalizer } from "react-big-calendar";
-import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-
-const localizer = momentLocalizer(moment);
+import React from "react";
 
 const CalendarView = () => {
-    const [events, setEvents] = useState([
-        {
-            title: "Task 1",
-            start: new Date(),
-            end: new Date(),
-        },
-    ]);
-
     return (
-        <div className="p-4">
-            <h2 className="p-2 rounded-md hover:bg-blue-100 transition-colors">Calendar View</h2>
-            <Calendar
-                localizer={localizer}
-                events={events}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 500 }}
-            />
+        <div className="p-6 bg-white shadow-md rounded-lg">
+            <h2 className="text-xl font-bold mb-4">📅 Calendar View</h2>
+            <p>Here you can view and manage your scheduled tasks.</p>
         </div>
     );
 };
