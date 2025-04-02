@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { addTask } from "../firebaseTasks";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 const TaskForm = ({ refreshTasks }) => {
     const [task, setTask] = useState({
@@ -17,8 +18,8 @@ const TaskForm = ({ refreshTasks }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await addTask(task);
-        refreshTasks(); // Refresh task list
+        await addDoc(collection(db, "tasks"), task);
+        refreshTasks(); // ✅ Refresh task list after adding
         setTask({ title: "", description: "", dueDate: "", priority: "Low", category: "Personal", completed: false });
     };
 
