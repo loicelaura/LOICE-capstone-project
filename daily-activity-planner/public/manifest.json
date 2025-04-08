@@ -1,6 +1,7 @@
 {
     "short_name": "Planner",
     "name": "Daily Activity Planner",
+    "description": "Your ultimate tool to stay organized and productive always",
     "icons": [
       {
         "src": "/app_icon_192x192.png",
